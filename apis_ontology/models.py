@@ -310,7 +310,6 @@ class Poster(BaseEntity):
     """
 
     label = models.CharField(
-        blank=True,
         default="",
         max_length=4096,
         verbose_name=_("Titel"),
