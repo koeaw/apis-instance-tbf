@@ -96,7 +96,7 @@ class PersonTable(BaseEntityTable):
 
     class Meta(BaseEntityTable.Meta):
         model = Person
-        fields = ["full_name", "surname", "forename"]
+        fields = ["full_name", "forename", "surname"]
         order_by = "surname"
 
 
