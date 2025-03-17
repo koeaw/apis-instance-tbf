@@ -5,6 +5,7 @@ import logging
 from apis_core.apis_entities.utils import get_entity_classes
 from apis_core.apis_metainfo.models import Uri
 from django.apps import apps
+from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.management.base import BaseCommand
@@ -237,6 +238,7 @@ class Command(BaseCommand):
             exit(0)
 
         with open(OPENREFINE_EXPORT) as f:
+            base_uri = settings.APIS_BASE_URI
             posters_raw_data = json.load(f)
 
             # create Thomas Bernhard as first Person from GND ID
@@ -342,11 +344,15 @@ class Command(BaseCommand):
                 # log issues with Poster data when creating new objects
                 if poster_created:
                     if poster.label == "":
-                        logger.warning(f"Poster ID {poster.id} has no title.")
+                        logger.warning(
+                            f"Poster ID {poster.id} has no title. "
+                            f"{base_uri}{poster.get_absolute_url()}"
+                        )
 
                     if poster.quantity == 0:
                         logger.warning(
-                            f'Poster "{poster.label}" (ID {poster.id}) has quantity 0.'
+                            f'Poster "{poster.label}" (ID {poster.id}) has quantity 0. '
+                            f"{base_uri}{poster.get_absolute_url()}"
                         )
 
                 if event_type:
