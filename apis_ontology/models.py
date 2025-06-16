@@ -5,7 +5,7 @@ from apis_core.relations.models import Relation
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.utils.translation import pgettext_lazy
-from django_interval.fields import FuzzyDateParserField
+from django_interval.fields import FuzzyDateParserField, FuzzyDateRegexField
 
 
 class BaseEntity(VersionMixin, AbstractEntity):
@@ -325,6 +325,17 @@ class Performance(BaseEntity):
             "from and to date, though either date is optional and dates may "
             "also remain incomplete. Ex. ab 1982-02 bis 1982-03"
         ),
+    )
+
+    date_range_regex = FuzzyDateRegexField(
+        blank=True,
+        to_pattern=r"<to: (?P<year>\d{1,4})\-(?P<month>\d{1,2})\-(?P<day>\d{1,2})>",
+        from_pattern=r"<from: (?P<year>\d{1,4})\-(?P<month>\d{1,2})\-(?P<day>\d{1,2})>",
+        sort_pattern=r"<sort: (?P<year>\d{1,4})\-(?P<month>\d{1,2})\-(?P<day>\d{1,2})>",
+        verbose_name=_("Zeitraum"),
+        help_text="Eingabe in der Form: &lt;date_type: YYYY-MM-DD&gt;<br>"
+        'Mögliche Datumstypen: "from" für Startdatum, "to" für Enddatum, '
+        '"sort" für Sortierreihenfolge. Bsp.: &lt;to: 1980-02-14&gt;',
     )
 
     class Meta:
