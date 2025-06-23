@@ -271,6 +271,18 @@ class Event(BaseEntity):
         ),
     )
 
+    start_date = FuzzyDateParserField(
+        blank=True,
+        default="",
+        verbose_name=_("start date"),
+    )
+
+    end_date = FuzzyDateParserField(
+        blank=True,
+        default="",
+        verbose_name=_("end date"),
+    )
+
     class Meta:
         verbose_name = _("event")
         verbose_name_plural = _("events")
@@ -325,6 +337,18 @@ class Performance(BaseEntity):
             "from and to date, though either date is optional and dates may "
             "also remain incomplete. Ex. ab 1982-02 bis 1982-03"
         ),
+    )
+
+    start_date = FuzzyDateParserField(
+        blank=True,
+        default="",
+        verbose_name=_("start date"),
+    )
+
+    end_date = FuzzyDateParserField(
+        blank=True,
+        default="",
+        verbose_name=_("end date"),
     )
 
     class Meta:

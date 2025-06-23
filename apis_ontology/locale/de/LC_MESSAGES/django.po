@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-23 10:25+0200\n"
+"POT-Creation-Date: 2025-06-23 10:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: K Kollmann <dev-kk@oeaw.ac.at>\n"
 "Language: German \n"
@@ -102,6 +102,14 @@ msgstr ""
 "Eingabe in der Form: \"ab YYYY-MM-DD bis YYYY-MM-DD\", wobei beide "
 "Datumsteile optional sind und auch unvollständige Daten angegeben werden "
 "können. Bsp: ab 1982-02 bis 1982-03"
+
+#: apis_ontology/models.py
+msgid "start date"
+msgstr "Datum Anfang"
+
+#: apis_ontology/models.py
+msgid "end date"
+msgstr "Datum Ende"
 
 #: apis_ontology/models.py
 msgid "event"
