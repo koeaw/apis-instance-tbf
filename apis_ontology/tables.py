@@ -127,7 +127,16 @@ class EventTable(BaseEntityTable):
 
     class Meta(BaseEntityTable.Meta):
         model = Event
-        fields = ["label", "event_type"]
+        fields = [
+            "label",
+            "date_range",
+            "start_date",
+            "start_date_date_from",
+            "start_date_date_to",
+            "end_date",
+            "end_date_date_from",
+            "end_date_date_to",
+        ]
         order_by = "label"
 
 
@@ -136,7 +145,18 @@ class PerformanceTable(BaseEntityTable):
 
     class Meta(BaseEntityTable.Meta):
         model = Performance
-        fields = ["label"]
+        fields = [
+            "label",
+            "date_range",
+            "date_range_date_from",
+            "date_range_date_to",
+            "start_date",
+            "start_date_date_from",
+            "start_date_date_to",
+            "end_date",
+            "end_date_date_from",
+            "end_date_date_to",
+        ]
         order_by = "label"
 
 
