@@ -184,6 +184,13 @@ class Manifestation(TitlesMixin, BaseEntity):
     https://cidoc-crm.org//extensions/lrmoo/html/LRMoo_v1.0.html#F3
     """
 
+    short_title = models.CharField(
+        max_length=255,
+        blank=True,
+        default="",
+        verbose_name=_("subtitle"),
+    )
+
     isbn = models.CharField(
         blank=True,
         default="",
@@ -265,6 +272,13 @@ class Person(BaseEntity, E21_Person):
     Based on CIDOC CRM class E21 Person:
     https://www.cidoc-crm.org/html/cidoc_crm_v7.1.3.html#E21
     """
+
+    pseudonym = models.CharField(
+        blank=True,
+        default="",
+        max_length=4096,
+        verbose_name=_("pseudonym"),
+    )
 
     class Meta(E21_Person.Meta):
         pass
