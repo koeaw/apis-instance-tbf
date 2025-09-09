@@ -2,6 +2,7 @@
 .DS_Store
 .idea/
 .python-version
+.uv.lock
 
 # settings files / local development
 .env*
