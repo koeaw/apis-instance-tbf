@@ -39,6 +39,12 @@ lint = [
 add-bounds = "minor"
 resolution = "lowest-direct"
 
+[tool.uv.sources]
+# used for local development; use uv lock and sync with --no-sources to lock
+# against the PyPI versions of packages
+apis-core-rdf = { path = "./apis_core", editable = true }
+apis-acdhch-default-settings = { path = "./apis_acdhch_default_settings", editable = true }
+
 [tool.djlint]
 # djLint config options: https://djlint.com/docs/configuration/#options
 indent=2
