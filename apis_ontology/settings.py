@@ -35,9 +35,6 @@ for a in APIS_APPS_APPEND:
 
 ROOT_URLCONF = "apis_ontology.urls"
 
-WSGI_APPLICATION = "apis_ontology.wsgi.application"
-
-
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
