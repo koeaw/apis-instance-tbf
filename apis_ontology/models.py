@@ -410,7 +410,7 @@ class Performance(BaseEntity):
     They are always associated with a single Work, but may consist of other
     Performances as parts (e.g. a piano concerto with multiple movements)
     or cover a complete run of equivalent performances of the same work.
-    They may be based on specific Expressions (e,g. translations), be created
+    They may be based on specific Expressions (e.g. translations), be created
     according to specific staging directions or be influenced by or include
     elements of other works.
 
