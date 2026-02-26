@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-10 12:18+0100\n"
+"POT-Creation-Date: 2026-02-26 19:57+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: K Kollmann <dev-kk@oeaw.ac.at>\n"
 "Language-Team: \n"
@@ -23,6 +23,14 @@ msgstr "Textsuche felderübergreifend"
 #: apis_ontology/filtersets.py
 msgid "Searches in:"
 msgstr "Sucht in:"
+
+#: apis_ontology/forms.py
+msgid "The selected language does not support varieties."
+msgstr "Für die gewählte Sprache kann keine Varietät angegeben werden."
+
+#: apis_ontology/forms.py
+msgid "Invalid variety for the selected language."
+msgstr "Keine gültige Varietät der gewählten Sprache."
 
 #: apis_ontology/models.py
 msgid "exhibition"
